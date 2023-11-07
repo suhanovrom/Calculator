@@ -58,7 +58,7 @@ divide.addEventListener("click", function() {
     result.textContent += "/";
 });
 equals.addEventListener("click", function() {
-    if((eval(result.textContent) == Infinity) || (result.textContent == "0/0")){
+    if((eval(result.textContent) == Infinity) || (result.textContent == "0/0") || (eval(result.textContent)  == -Infinity)){
         alert("На 0 делить нельзя");
         result.textContent = ""
     }else{
