@@ -17,6 +17,7 @@ body{
     
 }
 .result > h1{
+    overflow: hidden;
     margin: 0px;
     margin-right: 10px;
     color: white;
