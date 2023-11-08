@@ -18,40 +18,18 @@ let ac = document.querySelector(".ac");
 let bracket1 = document.querySelector(".bracket1");
 let bracket2 = document.querySelector(".bracket2");
 let dot = document.querySelector(".dot");
+let operators = document.querySelectorAll(".operators");
 bracket1.textContent = "(";
 bracket2.textContent = ")";
 bracket1.style.color = "white";
 bracket2.style.color = "white";
-one.addEventListener("click", function() {
-    result.textContent  += "1";
-});
-two.addEventListener("click", function() {
-    result.textContent += "2";
-});
-three.addEventListener("click", function() {
-    result.textContent += "3";
-});
-four.addEventListener("click", function() {
-    result.textContent += "4";
-});
-five.addEventListener("click", function() {
-    result.textContent += "5";
-});
-six.addEventListener("click", function() {
-    result.textContent += "6";
-});
-seven.addEventListener("click", function() {
-    result.textContent += "7";
-});
-eight.addEventListener("click", function() {
-    result.textContent += "8";
-});
-nine.addEventListener("click", function() {
-    result.textContent += "9";
-});
-zero.addEventListener("click", function() {
-    result.textContent += "0";
-});
+let number = document.querySelectorAll(".number");
+for (let value of number){
+    value.addEventListener("click", function() {
+        result.textContent  += value.textContent;
+    });
+}
+
 plus.addEventListener("click", function() {
     result.textContent += "+";
 });
@@ -88,3 +66,31 @@ bracket1.addEventListener("click", function() {
 bracket2.addEventListener("click", function() {
     result.textContent += ")";
 });
+document.addEventListener('keydown', function(e) {
+    for(let value of number){
+        if(e.key == value.textContent){
+            result.textContent += value.textContent;
+        }
+    }
+    for(let value of operators){
+        if((e.key == value.textContent) && (e.key != "=")){
+            result.textContent += value.textContent;
+        }
+    }
+    if (e.key == "*"){
+        result.textContent += "*";
+    }else if(e.code == "Slash"){
+        result.textContent += "/"
+    }else if(e.code == "Backspace"){
+        result.textContent = result.textContent.slice(0,-1);
+    }else if (e.code == "Enter"){
+        if((eval(result.textContent) == Infinity) || (result.textContent == "0/0") || (eval(result.textContent)  == -Infinity)){
+            alert("На 0 делить нельзя");
+            result.textContent = ""
+        }else if(result.textContent == "3.12"){
+            result.textContent = "Happy Birthday Dad"
+        }else{
+            result.textContent = eval(result.textContent);   
+        }
+    }
+  });
