@@ -79,7 +79,7 @@ document.addEventListener('keydown', function(e) {
     }
     if (e.key == "*"){
         result.textContent += "*";
-    }else if(e.code == "Slash"){
+    }else if(e.key == "/"){
         result.textContent += "/"
     }else if(e.code == "Backspace"){
         result.textContent = result.textContent.slice(0,-1);
