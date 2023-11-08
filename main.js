@@ -15,8 +15,15 @@ let divide = document.querySelector(".divide");
 let equals = document.querySelector(".equals");
 let multi = document.querySelector(".multi");
 let ac = document.querySelector(".ac");
+let bracket1 = document.querySelector(".bracket1");
+let bracket2 = document.querySelector(".bracket2");
+let dot = document.querySelector(".dot");
+bracket1.textContent = "(";
+bracket2.textContent = ")";
+bracket1.style.color = "white";
+bracket2.style.color = "white";
 one.addEventListener("click", function() {
-    result.textContent += "1";
+    result.textContent  += "1";
 });
 two.addEventListener("click", function() {
     result.textContent += "2";
@@ -61,11 +68,23 @@ equals.addEventListener("click", function() {
     if((eval(result.textContent) == Infinity) || (result.textContent == "0/0") || (eval(result.textContent)  == -Infinity)){
         alert("На 0 делить нельзя");
         result.textContent = ""
+    }else if(result.textContent == "3.12"){
+        result.textContent = "Happy Birthday Dad"
     }else{
         result.textContent = eval(result.textContent);
     }
     
+    
 });
 ac.addEventListener("click", function() {
     result.textContent = "";
+});
+dot.addEventListener("click", function() {
+    result.textContent += ".";
+});
+bracket1.addEventListener("click", function() {
+    result.textContent += "(";
+});
+bracket2.addEventListener("click", function() {
+    result.textContent += ")";
 });
