@@ -33,6 +33,7 @@ body{
     margin: 30px auto;
 }
 .background {
+    position: absolute;
     margin-top: 50px;
     width: 400px;
     height: 430px;
@@ -102,19 +103,30 @@ body{
 }
 
 .bracket1{
-    margin-right: 5px;
+    margin-left: 1px;
 }
 .bracket2{
-    margin-right: 5px;
+    margin-left: 1px;
 }
 .zero p{
 
     font-size: 20px;
 }
 .dot{
-    margin-left: 42px;
-    margin-right: 5px;
+    margin-left: 1px;
 }
 .dot p{
     color: white;
 }
+.equals{
+    margin-left: 1px;
+}
+.block1 {
+    width: 100px;
+    height: 100px;
+    position: absolute;
+    left: 50px;
+    top: 50px;
+    border-radius: 50%;
+    background: blue;
+  }

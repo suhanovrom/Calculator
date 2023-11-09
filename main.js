@@ -19,6 +19,7 @@ let bracket1 = document.querySelector(".bracket1");
 let bracket2 = document.querySelector(".bracket2");
 let dot = document.querySelector(".dot");
 let operators = document.querySelectorAll(".operators");
+let pi = document.querySelector(".pi");
 bracket1.textContent = "(";
 bracket2.textContent = ")";
 bracket1.style.color = "white";
@@ -43,16 +44,25 @@ divide.addEventListener("click", function() {
     result.textContent += "/";
 });
 equals.addEventListener("click", function() {
-    if((eval(result.textContent) == Infinity) || (result.textContent == "0/0") || (eval(result.textContent)  == -Infinity)){
+    if(((result.textContent.includes("/0") == true) && (result.textContent.includes("/0.") == false)) || (result.textContent == "0/0")){
         alert("На 0 делить нельзя");
-        result.textContent = ""
+        result.textContent = "";
+    }else if((eval(result.textContent) ==  Infinity) || (eval(result.textContent) == -Infinity)){
+        alert("Вы немного переборщили");
+        result.textContent = "";
     }else if(result.textContent == "3.12"){
-        result.textContent = "Happy Birthday Dad"
+        result.textContent = "Happy Birthday Dad";
     }else{
         result.textContent = eval(result.textContent);
     }
+
+
+   
     
     
+});
+pi.addEventListener("click", function() {
+    result.textContent += Math.PI;
 });
 ac.addEventListener("click", function() {
     result.textContent = "";
@@ -92,5 +102,20 @@ document.addEventListener('keydown', function(e) {
         }else{
             result.textContent = eval(result.textContent);   
         }
+    }else if(e.key == "p"){
+        result.textContent += Math.PI;
     }
+  });
+  let div = document.querySelector(".background");
+  let listener = function(e) {
+    div.style.left = e.pageX - 50 + "px";
+    div.style.top = e.pageY - 50 + "px";
+  };
+  
+  div.addEventListener('mousedown', e => {
+      document.addEventListener('mousemove', listener);
+  });
+  
+  div.addEventListener('mouseup', e => {
+      document.removeEventListener('mousemove', listener);
   });
