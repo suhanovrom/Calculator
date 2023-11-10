@@ -106,16 +106,16 @@ document.addEventListener('keydown', function(e) {
         result.textContent += Math.PI;
     }
   });
-  let div = document.querySelector(".background");
-  let listener = function(e) {
-    div.style.left = e.pageX - 50 + "px";
-    div.style.top = e.pageY - 50 + "px";
-  };
+//   let div = document.querySelector(".background");
+//   let listener = function(e) {
+//     div.style.left = e.pageX - 50 + "px";
+//     div.style.top = e.pageY - 50 + "px";
+//   };
   
-  div.addEventListener('mousedown', e => {
-      document.addEventListener('mousemove', listener);
-  });
+//   div.addEventListener('mousedown', e => {
+//       document.addEventListener('mousemove', listener);
+//   });
   
-  div.addEventListener('mouseup', e => {
-      document.removeEventListener('mousemove', listener);
-  });
+//   div.addEventListener('mouseup', e => {
+//       document.removeEventListener('mousemove', listener);
+//   });
