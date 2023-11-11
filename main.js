@@ -20,6 +20,7 @@ let bracket2 = document.querySelector(".bracket2");
 let dot = document.querySelector(".dot");
 let operators = document.querySelectorAll(".operators");
 let pi = document.querySelector(".pi");
+let sqrt = document.querySelector(".sqrt");
 bracket1.textContent = "(";
 bracket2.textContent = ")";
 bracket1.style.color = "white";
@@ -62,7 +63,7 @@ equals.addEventListener("click", function() {
     
 });
 pi.addEventListener("click", function() {
-    result.textContent += Math.PI;
+    result.textContent += Math.PI.toFixed(2);
 });
 ac.addEventListener("click", function() {
     result.textContent = "";
@@ -75,6 +76,15 @@ bracket1.addEventListener("click", function() {
 });
 bracket2.addEventListener("click", function() {
     result.textContent += ")";
+});
+sqrt.addEventListener("click", function() {
+    if (eval(result.textContent) < 0){
+        alert("нельзя вычеслить корень");
+        result.textContent = "";
+    }else{
+        let a = Math.sqrt(eval(result.textContent));
+        result.textContent = a.toFixed(2);
+    }
 });
 document.addEventListener('keydown', function(e) {
     for(let value of number){
@@ -103,7 +113,7 @@ document.addEventListener('keydown', function(e) {
             result.textContent = eval(result.textContent);   
         }
     }else if(e.key == "p"){
-        result.textContent += Math.PI;
+        result.textContent += Math.PI.toFixed(2);
     }
   });
 //   let div = document.querySelector(".background");
