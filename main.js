@@ -26,7 +26,7 @@ for(let value of operators){
         case "√":
             value.addEventListener("click", function() {
                 if (eval(result.textContent) < 0){
-                    alert("нельзя вычеслить корень");
+                    alert("нельзя вычислить корень");
                     result.textContent = "";
                 }else{
                     let a = Math.sqrt(eval(result.textContent));
