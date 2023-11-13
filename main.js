@@ -1,5 +1,4 @@
 let result = document.querySelector("h1");
-let ac = document.querySelector(".ac");
 let operators = document.querySelectorAll(".operators");
 let number = document.querySelectorAll(".number");
 for (let value of number){
@@ -9,6 +8,11 @@ for (let value of number){
 }
 for(let value of operators){
     switch(value.textContent){
+        case "AC":
+            value.addEventListener("click", function() {
+                result.textContent = "";
+            });
+            break;
         case "÷":
             value.addEventListener("click", function() {
                 result.textContent += "/";
@@ -87,7 +91,3 @@ document.addEventListener('keydown', function(e) {
         result.textContent += Math.PI.toFixed(2);
     }
   });
-
-ac.addEventListener("click", function() {
-    result.textContent = "";
-});
