@@ -36,7 +36,12 @@ for(let value of operators){
             break;
         case "Π":
             value.addEventListener("click", function() {
-                result.textContent += Math.PI.toFixed(2);
+                if(result.textContent == "3.14"){
+                    result.textContent = Math.PI.toFixed(2);
+                }else{
+                    result.textContent += Math.PI.toFixed(2);
+                }
+                
             });
             break;
         case "=":
