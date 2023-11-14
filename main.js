@@ -66,7 +66,12 @@ for(let value of operators){
             break;
         default:
             value.addEventListener("click", function() {
-                result.textContent  += value.textContent;
+                if((value.textContent == ".") && (result.textContent == ".")){
+                    result.textContent = ".";
+                }else{
+                    result.textContent  += value.textContent;
+                }
+                
             });
             break;
     }
@@ -79,7 +84,11 @@ document.addEventListener('keydown', function(e) {
     }
     for(let value of operators){
         if((e.key == value.textContent) && (e.key != "=")){
-            result.textContent += value.textContent;
+            if((value.textContent == ".") && (result.textContent == ".")){
+                result.textContent = ".";
+            }else{
+                result.textContent  += value.textContent;
+            }
         }
     }
     if (e.key == "*"){
