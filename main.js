@@ -93,6 +93,12 @@ document.addEventListener('keydown', function(e) {
             result.textContent = eval(result.textContent);   
         }
     }else if(e.key == "p"){
-        result.textContent += Math.PI.toFixed(2);
+        if (eval(result.textContent) < 0){
+            alert("нельзя вычислить корень");
+            result.textContent = "";
+        }else{
+            let a = Math.sqrt(eval(result.textContent));
+            result.textContent = a.toFixed(2);
+        }
     }
   });
