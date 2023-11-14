@@ -1,11 +1,6 @@
 let result = document.querySelector("h1");
 let operators = document.querySelectorAll(".operators");
 let number = document.querySelectorAll(".number");
-let vetalpidor = document.querySelector(".vetalpidor");
-let body = document.querySelector("body");
-vetalpidor.addEventListener("click", function(){
-    body.style.display ="none";
-});
 for (let value of number){
     value.addEventListener("click", function() {
         result.textContent  += value.textContent;
