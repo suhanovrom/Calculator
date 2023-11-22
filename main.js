@@ -101,13 +101,5 @@ document.addEventListener('keydown', function(e) {
         }else{
             result.textContent = eval(result.textContent);   
         }
-    }else if(e.key == "p"){
-        if (eval(result.textContent) < 0){
-            alert("нельзя вычислить корень");
-            result.textContent = "";
-        }else{
-            let a = Math.sqrt(eval(result.textContent));
-            result.textContent = a.toFixed(2);
-        }
     }
   });
